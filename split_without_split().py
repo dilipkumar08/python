@@ -10,7 +10,14 @@ for i in s:
     print(t)
     t=''
     
+#to print the split values without storing them
 
-    
-        
-    
+d=""
+string='ade;gjgi;fdf'
+for i in string:
+    if i==";":
+        print(d)
+        d=""
+    else:
+        d=d+i
+print(d)   
