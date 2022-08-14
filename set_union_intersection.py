@@ -1,0 +1,13 @@
+n1=int(input())
+a=set(map(int,input().split()))
+n2=int(input())
+b=set(map(int,input().split()))
+u=a.union(b)
+print(len(u))
+
+n1=int(input())
+a=set(map(int,input().split()))
+n2=int(input())
+b=set(map(int,input().split()))
+u=a.intersection(b)
+print(len(u))
