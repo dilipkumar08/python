@@ -10,12 +10,9 @@ def wordcount(freq):
     h=int(input("Enter the height for the image:"))
     bc=str(input("Enter the background color"))    
     wc = WordCloud(width=w, height=h, max_words=10000, background_color=bc).generate_from_frequencies(freq)
-    return wc
-  
-  def display(wc):
     plt.figure(figsize=(12, 8))
     plt.imshow(wc, interpolation='bilinear')
-    
+
     if '__main__'==__name__:
     manual_data=[]
     print("\t\tEnter a method to add your words")
@@ -31,20 +28,18 @@ def wordcount(freq):
         print(data)
         freq=pd.Series(manual_data).value_counts()
         print(freq)
-        wc=wordcount(freq)
-        display(wc)           
+        wordcount(freq)
     elif option==2:
         n=int(input("Enter the number of word you would like to Add: "))
         for i in range(n):
             manual_data.append(str(input("Enter word",n,":")))
         freq=pd.Series(manual_data).value_counts()
-        wc=wordcount(freq)
-        display(wc)
+        wordcount(freq)
+        
     while True:
         change=int(input("Type '1' to change the size or background color:"))
         if change==1:
-            wc=wordcount(freq)
-            display(wc)
+            wordcount(freq)
         else:
             break
     print("Do you wanna Download the image")
