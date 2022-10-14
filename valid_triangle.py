@@ -7,4 +7,4 @@ if __name__=="__main__":
     A=float(input("Angle A:"))
     B=float(input("Angle B:"))
     C=float(input("Angle C:"))
-    valid_triangle(A,B,C
+    valid_triangle(A,B,C)
