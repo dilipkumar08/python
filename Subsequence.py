@@ -9,14 +9,12 @@ def isValidSubsequence(array, sequence):
                 result= True
                 n=array.index(i)
                 array.remove(i)
-               
             else:
                 result=False
                 break;
     else:
         result=False
     return(result)
-    
 
 array=[5, 1, 22, 25, 6, -1, 8, 10]
 sequence=[5, 1, 22, 6, -1, 8, 10]
