@@ -11,7 +11,6 @@ for i in inp:
         h-=1
 print(h)
 #passed test case 0, 1, 2, 3, 7 (code works but need to reduce time complexity)
-
 #trail2
 from collections import Counter
 mn=input()
