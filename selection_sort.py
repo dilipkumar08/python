@@ -9,7 +9,7 @@ def smallest(li):
     return (s,index)
 
 if "__main__"==__name__:
-    a=[34,56,23,45,2,456]
+    a=list(map(int,input().strip().split()))
     c=[]
     le=len(a)
     while le!=0:
