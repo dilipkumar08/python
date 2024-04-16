@@ -1,0 +1,15 @@
+import streamlit as sl
+
+sl.title("Hi This is my first web app!")
+sl.markdown("---")
+sl.header("Charu")
+sl.subheader("Kutty Charu")
+sl.markdown("---")
+sl.text("Hi I am Dilipkumar and I Love charu")
+sl.markdown("---")
+sl.markdown("**Love you** *charu* <3")
+sl.markdown("---")
+sl.markdown("# Charukutty\n## Chellakutty\n### Pannikutty")
+sl.markdown("---")
+sl.markdown("[click me](https://images.unsplash.com/photo-1582809620589-e9748fd04437?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)")
+sl.latex(r"\begin{pmatrix}I&Love\\You&Charu\\By&Dilip\end{pmatrix}")
