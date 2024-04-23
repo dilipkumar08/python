@@ -15,7 +15,7 @@ def isValidSubsequence(array, sequence):
     else:
         result=False
     return(result)
-
-array=[5, 1, 22, 25, 6, -1, 8, 10]
-sequence=[5, 1, 22, 6, -1, 8, 10]
-print(isValidSubsequence(array, sequence))
+if __name__="__main__":
+    array=[5, 1, 22, 25, 6, -1, 8, 10]
+    sequence=[5, 1, 22, 6, -1, 8, 10]
+    print(isValidSubsequence(array, sequence))
