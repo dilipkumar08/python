@@ -3,6 +3,7 @@ from sklearn.tree import DecisionTreeRegressor
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_absolute_error as MAE
 from sklearn.ensemble import RandomForestRegressor,RandomForestClassifier
+from from sklearn.metrics import mean_square_error as MSE
 
 mel_house=pd.read_csv('D:/python/project/kaggle/dataset/melb_data.csv')
 
@@ -23,6 +24,25 @@ def mae_rfc(x_train,x_test,y_train,y_test,leaf_count):
     model.fit(x_train,y_train)
     prediction=model.predict(x_test)
     return MAE(y_test,prediction)
+
+
+def mse_dtr(x_train,x_test,y_train,y_test,leaf_count):
+    model=DecisionTreeRegressor(random_state=1,max_leaf_nodes=leaf_count)
+    model.fit(x_train,y_train)
+    prediction=model.predict(x_test)
+    return MSE(y_test,prediction)
+
+def mse_rfr(x_train,x_test,y_train,y_test,leaf_count):
+    model=RandomForestRegressor(random_state=1,max_leaf_nodes=leaf_count)
+    model.fit(x_train,y_train)
+    prediction=model.predict(x_test)
+    return MSE(y_test,prediction)
+
+def mse_rfc(x_train,x_test,y_train,y_test,leaf_count):
+    model=RandomForestClassifier(random_state=1,max_leaf_nodes=leaf_count)
+    model.fit(x_train,y_train)
+    prediction=model.predict(x_test)
+    return MSE(y_test,prediction)
 
 
 mel_house.dropna(axis=0,inplace=True)
