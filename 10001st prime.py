@@ -1,0 +1,30 @@
+#!/bin/python3
+import sys
+
+def prime(n):
+    if n<=1:
+        return False
+    elif n<=3:
+        return True
+    elif n%2==0 or n%3==0:
+        return False
+    i=5
+    while i*i<=n:
+        if n%i==0 or n%(i+2)==0:
+            return False
+        i+=6
+    return True
+t=int(input().strip())
+for a0 in range(t):
+    n = int(input().strip())
+    temp=2
+    length=0
+    while length<n:
+        if prime(temp):
+            length+=1
+        temp+=1
+    print(temp-1)
+
+        
+    
+    
