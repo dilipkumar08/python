@@ -20,7 +20,7 @@ def checkerboard(n):
 if __name__=="__main__":
     n=int(input("Enter an integer: "))
     checkerboard(n)
-    
+#-----------------------------------------------------------------------
 #method-2
 import numpy as np 
 def checkerboard(n): 
