@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sci-Fi Interactive Heart</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+        
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: black;
+            margin: 0;
+            overflow: hidden;
+            position: relative;
+        }
+        .heart {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            background-color: red;
+            transform: rotate(-45deg);
+            box-shadow: 0 0 45px red, 0 0 90px crimson;
+            animation: pulse 1.5s infinite alternate;
+            cursor: pointer;
+        }
+        .heart:before,
+        .heart:after {
+            content: "";
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background-color: red;
+            border-radius: 50%;
+            box-shadow: 0 0 45px red, 0 0 90px crimson;
+        }
+        .heart:before {
+            top: -75px;
+            left: 0;
+        }
+        .heart:after {
+            left: 75px;
+            top: 0;
+        }
+        .name {
+            position: absolute;
+            font-size: 32px;
+            font-family: 'Dancing Script', cursive;
+            color: white;
+            text-shadow: 0 0 3px black, 0 0 6px black;
+            font-weight: bold;
+        }
+        .name.left {
+            left: 35%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .name.right {
+            right: 35%;
+            top: 50%;
+            transform: translate(50%, -50%);
+        }
+        .stars, .fireflies {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+        }
+        .star {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background-color: white;
+            border-radius: 50%;
+            box-shadow: 0 0 5px white;
+            animation: star-flicker-move 5s linear infinite alternate; /* changed animation here */
+        }
+        .firefly {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background-color: darkmagenta;
+            box-shadow: 0 0 15px darkmagenta;
+            animation: flicker-move 5s linear infinite alternate;
+        }
+        @keyframes flicker-move {
+            0% { opacity: 0.5; transform: translateY(0) scale(1); }
+            100% { opacity: 1; transform: translateY(-30vh) scale(1.5); }
+        }
+        @keyframes star-flicker-move { /* new star animation */
+            0% { opacity: 0.7; transform: translateY(0) scale(1); }
+            100% { opacity: 1; transform: translateY(-20vh) scale(1.2); }
+        }
+    </style>
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="fireflies"></div>
+    <div class="name left">Dilip</div>
+    <div class="heart"></div>
+    <div class="name right">Charu</div>
+    
+    <script>
+        function createStars() {
+            const starsContainer = document.querySelector('.stars');
+            for (let i = 0; i < 100; i++) {
+                const star = document.createElement('div');
+                star.classList.add('star');
+                star.style.top = Math.random() * 100 + 'vh';
+                star.style.left = Math.random() * 100 + 'vw';
+                star.style.animationDelay = Math.random() * 3 + 's';
+                starsContainer.appendChild(star);
+            }
+        }
+        createStars();
+
+        function createFireflies() {
+            const firefliesContainer = document.querySelector('.fireflies');
+            for (let i = 0; i < 15; i++) {
+                const firefly = document.createElement('div');
+                firefly.classList.add('firefly');
+                firefly.style.top = Math.random() * 100 + 'vh';
+                firefly.style.left = Math.random() * 100 + 'vw';
+                firefly.style.animationDelay = Math.random() * 3 + 's';
+                firefliesContainer.appendChild(firefly);
+            }
+        }
+        createFireflies();
+    </script>
+</body>
+</html>
