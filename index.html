@@ -20,10 +20,10 @@
         }
         .heart {
             position: relative;
-            width: 40vw; /* Use viewport width */
-            max-width: 150px; /* Limit max width */
-            height: 40vw; /* Use viewport width */
-            max-height: 150px; /* Limit max height */
+            width: 40vw;
+            max-width: 150px;
+            height: 40vw;
+            max-height: 150px;
             background-color: red;
             transform: rotate(-45deg);
             box-shadow: 0 0 45px red, 0 0 90px crimson;
@@ -34,42 +34,42 @@
         .heart:after {
             content: "";
             position: absolute;
-            width: 40vw; /* Use viewport width */
-            max-width: 150px; /* Limit max width */
-            height: 40vw; /* Use viewport width */
-            max-height: 150px; /* Limit max height */
+            width: 40vw;
+            max-width: 150px;
+            height: 40vw;
+            max-height: 150px;
             background-color: red;
             border-radius: 50%;
             box-shadow: 0 0 45px red, 0 0 90px crimson;
         }
         .heart:before {
-            top: -20vw; /* Use viewport width */
-            max-top: -75px; /* Limit max top */
+            top: -20vw;
+            max-top: -75px;
             left: 0;
         }
         .heart:after {
-            left: 20vw; /* Use viewport width */
-            max-left: 75px; /* Limit max left */
+            left: 20vw;
+            max-left: 75px;
             top: 0;
         }
         .name {
             position: absolute;
-            font-size: 8vw; /* Use viewport width */
-            max-font-size: 32px; /* Limit max font size */
+            font-size: 8vw;
+            max-font-size: 32px;
             font-family: 'Dancing Script', cursive;
             color: white;
             text-shadow: 0 0 3px black, 0 0 6px black;
             font-weight: bold;
         }
         .name.left {
-            left: 35%;
+            left: 10vw; /* Adjusted left position */
             top: 50%;
-            transform: translate(-50%, -50%);
+            transform: translateY(-50%); /* Removed translateX */
         }
         .name.right {
-            right: 35%;
+            right: 10vw; /* Adjusted right position */
             top: 50%;
-            transform: translate(50%, -50%);
+            transform: translateY(-50%); /* Removed translateX */
         }
         .stars, .fireflies {
             position: absolute;
