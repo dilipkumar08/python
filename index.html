@@ -6,7 +6,7 @@
     <title>Sci-Fi Interactive Heart</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
-        
+
         body {
             display: flex;
             flex-direction: column;
@@ -20,8 +20,10 @@
         }
         .heart {
             position: relative;
-            width: 150px;
-            height: 150px;
+            width: 40vw; /* Use viewport width */
+            max-width: 150px; /* Limit max width */
+            height: 40vw; /* Use viewport width */
+            max-height: 150px; /* Limit max height */
             background-color: red;
             transform: rotate(-45deg);
             box-shadow: 0 0 45px red, 0 0 90px crimson;
@@ -32,23 +34,28 @@
         .heart:after {
             content: "";
             position: absolute;
-            width: 150px;
-            height: 150px;
+            width: 40vw; /* Use viewport width */
+            max-width: 150px; /* Limit max width */
+            height: 40vw; /* Use viewport width */
+            max-height: 150px; /* Limit max height */
             background-color: red;
             border-radius: 50%;
             box-shadow: 0 0 45px red, 0 0 90px crimson;
         }
         .heart:before {
-            top: -75px;
+            top: -20vw; /* Use viewport width */
+            max-top: -75px; /* Limit max top */
             left: 0;
         }
         .heart:after {
-            left: 75px;
+            left: 20vw; /* Use viewport width */
+            max-left: 75px; /* Limit max left */
             top: 0;
         }
         .name {
             position: absolute;
-            font-size: 32px;
+            font-size: 8vw; /* Use viewport width */
+            max-font-size: 32px; /* Limit max font size */
             font-family: 'Dancing Script', cursive;
             color: white;
             text-shadow: 0 0 3px black, 0 0 6px black;
@@ -79,7 +86,7 @@
             background-color: white;
             border-radius: 50%;
             box-shadow: 0 0 5px white;
-            animation: star-flicker-move 5s linear infinite alternate; /* changed animation here */
+            animation: star-flicker-move 5s linear infinite alternate;
         }
         .firefly {
             position: absolute;
@@ -93,7 +100,7 @@
             0% { opacity: 0.5; transform: translateY(0) scale(1); }
             100% { opacity: 1; transform: translateY(-30vh) scale(1.5); }
         }
-        @keyframes star-flicker-move { /* new star animation */
+        @keyframes star-flicker-move {
             0% { opacity: 0.7; transform: translateY(0) scale(1); }
             100% { opacity: 1; transform: translateY(-20vh) scale(1.2); }
         }
@@ -105,7 +112,7 @@
     <div class="name left">Dilip</div>
     <div class="heart"></div>
     <div class="name right">Charu</div>
-    
+
     <script>
         function createStars() {
             const starsContainer = document.querySelector('.stars');
